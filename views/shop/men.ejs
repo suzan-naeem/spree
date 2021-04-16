@@ -1,0 +1,56 @@
+<%- include('../includes/head.ejs') %>
+    <link rel="stylesheet" href="/css/styles.css">
+    </head>
+
+    <body>
+        <%- include('../includes/navigation.ejs') %>
+
+            <main style="margin-top: 150px;">
+                <div class="titles">
+                    <h2>Male <span>Products</span> </h2>
+                </div>
+                <div class="cart-container">
+                    <% if (prods.length > 0 ) { %>
+                        <div class="row">
+                            <% for (let product of prods) { %>
+                                <% if(product.category=="male") { %>
+                                <form action="/cart" method="POST">
+                                    <article class="cart col-lg-3 col-md-4 col-sm-4">
+                                        <header>
+                                            <h1>
+                                                <%= product.title %>
+                                            </h1>
+                                        </header>
+                                        <div>
+                                            <img src="<%= product.image %>" alt="A Book">
+                                        </div>
+                                        <div>
+                                            <h2>
+                                                $<%= product.price %>
+                                            </h2>
+                                            <p>
+                                                <%= product.desc %>
+                                            </p>
+                                        </div>
+                                        <div>
+                                            <input type="hidden" name="productId" value="<%= product.id %>">
+
+                                            <button type="submit" class="primary-btn">Add to cart</button>
+
+                                            <a href="/products/<%= product.id %>" class="primary-btn">Details</a>
+
+                                        </div>
+                                    </article>
+                                </form>
+                                <% } %>
+                                <% } %>
+                        </div>
+                </div>
+                <% } else { %>
+                    <h1>No Products Found!</h1>
+                    <% } %>
+
+            </main>
+            <%- include('../includes/footer.ejs') %>
+
+                <%- include('../includes/end.ejs') %>

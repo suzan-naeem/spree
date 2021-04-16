@@ -1,0 +1,61 @@
+<%- include('./includes/head.ejs')%>
+    <link rel="stylesheet" href="/css/style.css">
+    </head>
+
+    <body>
+        <%- include('./includes/navigation.ejs') %>
+
+            <div class="product-page">
+                <img src="images/samplepic.jpg" class="img-thumbnail" style="height: 500px;" alt="">
+                <div class="product-details">
+                    <br><br><br>
+                    <h1 class="car-title"><span class="text-emph">Personal</span>Info:</h1>
+                    <br><br><br>
+                    <h1 class="text-left">Name:</h1>
+
+                    <p class="product-desc inline">
+                        <%= user.name %>
+                    </p>
+                    <br><br>
+                    <h1 class="text-left">Email:</h1>
+                    <p class="product-desc inline">
+                        <%= user._id %>
+                    </p>
+
+                    <br><br>
+                    <h1 class="text-left">Phone Number:</h1>
+                    <p class="product-desc inline">(+20)1099721161</p>
+                    <br>
+                </div>
+            </div>
+            <div class="info">
+
+                <h1 class="product-title"><span class="">Delivery</span> Address:</h1>
+                <br><br>
+
+                <p class="text-left">Street: </p>
+
+                <p class="product-desc inline">whatever st</p>
+                <br><br>
+                <p class="text-left">Street: </p>
+
+                <p class="product-desc inline">whatever st</p>
+                <br><br>
+                <p class="text-left">City: </p>
+
+                <p class="product-desc inline">alext</p>
+                <br><br>
+                <p class="text-left">State: </p>
+                <p class="product-desc inline">alexst</p>
+                <br><br>
+                <p class="text-left">Postal Code: </p>
+                <p class="product-desc inline">12345t</p>
+                <br><br>
+                <p class="text-left">Country: </p>
+                <p class="product-desc inline">Egypt</p>
+
+
+            </div>
+            <%- include('./includes/footer.ejs') %>
+                <%- include('./includes/end.ejs')%>
+    </body>

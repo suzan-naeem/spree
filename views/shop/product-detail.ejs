@@ -1,0 +1,59 @@
+<%- include('../includes/head.ejs')%>
+
+    </head>
+
+    <body>
+        <%- include('../includes/navigation.ejs') %>
+
+            <div class="product-page">
+                <img src="<%= product.image %>" class="img-thumbnail" >
+                <div class="product-details">
+                    <form action="/cart" method="post">
+                        <h1 class="product-title">
+                            <%= product.title %>
+                        </h1>
+                        <ul class="reviews" style="padding: 0ch; margin: 0ch;">
+                            <% for ( var i=1; i <=5; i++ ){%>
+                                <li>
+                                    <i class="far fa-star fa-sm"></i>
+                                </li>
+                                <%}%>
+                        </ul>
+                        <hr style="margin-top: 0ch;">
+                        <label for="" class="label">Description:</label>
+                        <p class="product-desc">
+                            <%= product.desc %>
+                        </p>
+                        <hr>
+                        <label for="" class="label">Price: </label>
+                        <p class="product-price">
+                            $<%= product.price %>
+                        </p>
+                        <br><br><br>
+                        <label for="" class="label"> Quantity: </label><input type="number" style="width: 50px; height: 37px; ">
+                        <button class="button" type="submit">Add To <i class="fas fa-shopping-cart"></i></button>
+                        <input type="hidden" name="productId" value="<%= product.id %>">
+                    </form>
+                    <hr>
+                    <form action="/" method="POST">
+                        <button class="wishlist ">Add To WishList <i class="far fa-heart "></i></button>
+                        <input type="hidden" name="productId" value="<%= product.id %>">
+
+                    </form>
+                </div>
+
+
+            </div>
+            <div class="info">
+                <label class="product-title" style="text-decoration: underline;">Product Information:</label>
+                <br>
+                <p class="product-desc">
+                    <%= product.info %>
+                </p>
+
+            </div>
+
+            <%- include('../includes/footer.ejs') %>
+    </body>
+
+    </html>

@@ -1,0 +1,85 @@
+<%- include('../includes/head.ejs') %>
+    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="stylesheet" href="/css/style.css">
+
+    </head>
+
+    <body>
+        <%- include('../includes/navigation.ejs') %>
+
+            <!-- <script src="/bootstrap.bundle.min.js"></script> -->
+
+
+            <% if (cart.length > 0) { %>
+                <!-- lw d5l 3la checkout w lessa mtlbsh orders w array fadia -->
+                <h1 class="page-title">My Cart</h1>
+                <br>
+
+
+
+                <table class="table table-striped alignmiddle">
+                    <tr>
+                        <th>Image</th>
+                        <th>Title</th>
+                        <th>Price</th>
+                        <th>Quantity</th>
+                        <th></th>
+                        <th>Subtotal</th>
+                    </tr>
+                    <% var total =0 ;%>
+                        <% cart.forEach( function(product){ %>
+                            <% var sub = parseFloat( product.quantity * product.productId.price) %>
+                                <% total += sub %>
+                                    <tr>
+                                        <td><img style="width: 100px; height: 100px;" src="<%= product.productId.image%>" alt=""></td>
+                                        <td>
+                                            <%= product.productId.title %>
+                                        </td>
+                                        <td>$
+                                            <%= product.productId.price %>
+                                        </td>
+                                        <td>
+                                            <%= product.quantity %>
+                                        </td>
+                                        <td>
+                                            <form action="/cart-delete-item" method="POST">
+                                                <input type="hidden" value="<%= product.productId.id %>" name="productId">
+                                                <input type="hidden" value="<%= product.productId.price %>" name="productPrice">
+                                                <input type="submit" value="delete">
+                                            </form>
+                                        </td>
+                                        <td>$
+                                            <%= sub %>
+                                        </td>
+                                    </tr>
+                                    <% }); %>
+                                        <tr>
+                                            <td colspan="5" align="right"><b>Total : $</b>
+                                                <%= parseFloat(total).toFixed(2) %>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                        </tr>
+                                        <tr>
+                                            <form action="/cart" method="POST">
+                                                <td colspan="5" align="right">
+                                                    <Button class="button-small" type="submit">Order now</Button>
+                                                </td>
+
+                                            </form>
+                                        </tr>
+
+
+
+                </table>
+
+                <% }else { %>
+
+                    <h3 class="text-center"> Your card is empty</h3>
+                    <% } %>
+
+
+
+
+                        <%- include('../includes/footer.ejs') %>
+                            <%- include('../includes/end.ejs') %>

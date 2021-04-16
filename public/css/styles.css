@@ -1,0 +1,161 @@
+body {
+    background-color: rgb(244 247 246);
+}
+
+.form-container {
+    background-color: rgb(244 247 246);
+    border: 1px solid #BFBFBF;
+    background-color: white;
+    box-shadow: 0px 0px 10px 1px #aaa;
+    padding: 20px;
+}
+
+.product-form {
+    margin: 8px 16px;
+}
+
+.product-form input,
+.product-form textarea {
+    width: 100%;
+    display: inline-block;
+    border-style: solid;
+    border-color: rgb(156, 155, 155);
+    transition: 0.3s ease-in-out;
+    color: black;
+    font-size: 15px;
+}
+
+.product-form input {
+    height: 35px;
+    border-radius: 5px;
+}
+
+.product-form textarea {
+    border-radius: 5px;
+}
+
+.product-form input:hover,
+.product-form input:focus,
+.product-form textarea:hover,
+.product-form textarea:focus {
+    border-style: solid;
+    border-radius: 0;
+    border-color: rgb(156, 155, 155);
+    transform: scale(1.05);
+    outline: none !important;
+    border-radius: 5px;
+}
+
+.product-form label {
+    display: block;
+    color: black;
+    font-weight: 900;
+    font-size: 20px;
+}
+
+.primary-btn {
+    background: #2c2c2c none repeat scroll 0 0;
+    color: #fff;
+    display: inline-block;
+    font-size: 15px;
+    padding: 7px 15px;
+    text-transform: uppercase;
+    outline: medium none;
+    transition: .3s ease-in-out;
+    border: none;
+    margin: auto;
+    line-height: 1.7;
+    text-decoration: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.primary-btn:hover {
+    background-color: #56bbb3;
+    text-decoration: none;
+    color: #fff;
+}
+
+.product-form .primary-btn {
+    margin-top: 20px;
+}
+
+.cart-container .primary-btn {
+    margin-top: 20px;
+    font-size: 12px;
+    font-weight: 500;
+    padding: 6px 12px;
+    border: 2px solid;
+    border-radius: 3px;
+}
+
+.primary-btn.delete:hover {
+    background-color: rgb(255, 0, 0);
+}
+
+.cart {
+    background-color: #fff;
+    border: 1px solid #BFBFBF;
+    box-shadow: 0px 0px 10px 1px #aaa;
+    height: 480px;
+    margin: 15px;
+    transition: ease-in-out 0.3s;
+    width: 27%;
+    
+}
+
+.cart:hover {
+    transform: scale(1.1);
+}
+
+.cart img {
+    width: 90%;
+    height: 200px;
+}
+
+.cart-container {
+    
+    text-align: center;
+}
+
+.titles h2 {
+    color: #000;
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 30px;
+    text-transform: uppercase;
+}
+
+.titles h2 span {
+    color: #01bab2;
+}
+
+main {
+    padding: 20px;
+}
+
+.create-account {
+    margin-top: 20px;
+}
+
+.create-account span a {
+    color: #01bab2;
+    font-weight: 600;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+main.login {
+    margin-top: 50px;
+    text-align: -webkit-center;
+    text-align: center;
+}
+
+.login .form-container {
+    display: inline-block;
+}
+
+.login input {
+    margin: 10px;
+    width: 100%;
+}

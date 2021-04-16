@@ -1,0 +1,81 @@
+<%- include('../includes/head.ejs') %>
+    <link rel="stylesheet" href="/css/styles.css">
+
+    </head>
+
+    <body>
+        <%- include('../includes/navigation.ejs') %>
+
+            <main style="margin-top: 50px;">
+                <div class="titles">
+                    <h2>Add <span>New Product</span></h2>
+                </div>
+                <div class="form-container">
+                    <% if(editing) { %>
+                        <form class="product-form" action="/admin/edit-product" method="POST">
+                            <% } else { %>
+                                <form class="product-form" action="/admin/add-product" method="POST">
+
+                                    <% } %>
+                                        <div class="row">
+                                            <div class="col-lg-6 col-sm-10">
+                                                <label for="title">Title</label>
+                                                <input type="text" name="title" id="title" value="<%if(editing){%> <%=product.title%><%}%>">
+                                            </div>
+                                            <div class="col-lg-6 col-sm-2"></div>
+
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-lg-6 col-sm-10">
+                                                <label for="image">Image</label>
+                                                <input type="text" name="image" id="image" value="<%if(editing){%> <%=product.image%><%}%>">
+                                            </div>
+                                            <div class="col-lg-6 col-sm-2"></div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-lg-6 col-sm-10">
+                                                <label for="price">Price</label>
+                                                <input type="text" name="price" id="price" value="<%if(editing){%> <%=product.price%><%}%>">
+                                            </div>
+                                            <div class="col-lg-6 col-sm-2"></div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-lg-6 col-sm-10">
+                                                <label for="desc">Description</label>
+                                                <textarea name="desc" id="desc" rows="2"><%if(editing){%> <%=product.desc%><%}%></textarea>
+                                            </div>
+                                            <div class="col-lg-6 col-sm-2"></div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-lg-6 col-sm-10">
+                                                <label for="info">Information</label>
+                                                <textarea name="info" id="info" rows="3"><%if(editing){%> <%=product.info%><%}%></textarea>
+                                            </div>
+                                            <div class="col-lg-6 col-sm-2"></div>
+                                        </div>
+                                        <div>
+                                            <div class="row">
+                                                <div class="col-lg-6 col-sm-10">
+
+                                                    <%if(editing) {%>
+                                                        <input type="hidden" name="productId" value="<%=product.id%>">
+                                                        <%}%>
+                                                            <button class="primary-btn" type="submit"><% if(editing){  %> Update Product <%} else { %> Add Product <% } %> </button>
+                                                </div>
+                                                <div class="col-lg-6 col-sm-2"></div>
+                                            </div>
+
+
+                                        </div>
+
+
+
+
+                                </form>
+                </div>
+
+
+            </main>
+
+            <%- include('../includes/footer.ejs') %>
+                <%- include('../includes/end.ejs') %>

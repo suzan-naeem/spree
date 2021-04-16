@@ -1,0 +1,52 @@
+<%- include('../includes/head.ejs')%>
+
+    <link rel="stylesheet" href="/css/style.css">
+    </head>
+
+    <body>
+        <%- include('../includes/navigation.ejs')%>
+            <div class="section ">
+                
+                <h2><span class="text-emph" style="font-size: 33px;-webkit-text-stroke: 0px;">  Edit</span> Delivery Address:</h2>
+                <br><br><br>
+                <div class="flex-row">
+                    <div>
+
+                        <p class="form-label">Address: </p>
+                        <p class="form-label">Street: </p>
+                        <p class="form-label">City: </p>
+                        <p class="form-label">State: </p>
+                        <p class="form-label">Postal Code: </p>
+                        <p class="form-label">Country: </p>
+                    </div>
+                    <div>
+                        <form action="" id="address-edit">
+                        <input type="text" class="form-input" value="<%= user.address? 'user.address': ''%>">
+                        <br>
+                        <input type="text" class="form-input" value="<%= user.stree? 'user.stree': ''%>">
+                        <br>
+                        <input type="text" class="form-input" value="<%= user.city? 'user.city': ''%>">
+                        <br>
+                        <input type="text" class="form-input" value="<%= user.state? 'user.state': ''%>">
+                        <br>
+                        <input type="text" class="form-input" value="<%= user.postalcode? 'user.postalcode': ''%>">
+                        <br>
+                        <select name="country" id="country" form_id="address-edit" class="form-input">
+                            <option value="Egypt">Egypt</option>
+                            <option value="United States">United States</option>
+                            <option value="United Kingdom">United Kingdom</option>
+                            <option value="Saudi Arabia">Saudi Arabia</option>
+                            <option value="Italy">Italy</option>
+                            <option value="Spain">Spain</option>
+                        </select>
+                        <br><br>
+                        <input type="submit" class="button-big" value="Save Changes">
+                    </form>
+                    </div>
+                </div>
+            </div>
+
+
+            <%- include('../includes/footer.ejs') %>
+                <%- include('../includes/end.ejs')%>
+    </body>

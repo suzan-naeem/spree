@@ -1,0 +1,28 @@
+.notfound {
+    margin-top: 10%;
+    margin-left: 25%;
+}
+
+.notfound h1 {
+    font-size: 200px;
+    font-weight: bold;
+}
+
+.notfound h1 span {
+    color: var(--secondary-color);
+}
+
+.notfound .button-big {
+    display: block;
+    padding: 17px;
+    margin-top: 10%;
+    margin-left: 15%;
+}
+
+.notfound .button-big:hover {
+    display: block;
+    padding: 17px;
+    margin-top: 10%;
+    margin-left: 15%;
+    text-decoration: none;
+}

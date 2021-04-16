@@ -1,0 +1,50 @@
+<%- include('../includes/head.ejs')%>
+
+    <link rel="stylesheet" href="/css/style.css">
+    </head>
+
+    <body>
+        <%- include('../includes/navigation.ejs')%>
+            <div class="section ">
+                <h1 class="car-title" style="-webkit-text-stroke: 0px;"><span class="text-emph"
+                        style="-webkit-text-stroke: 0px;">Edit</span>Profile</h1>
+                <br><br>
+                <h2 class="inline"><span class="text-emph" style="font-size: 33px;-webkit-text-stroke: 0px;">
+                        Edit</span> Profile Picture: </h2><span class="tab"></span>
+                <button class="button">Upload a photo</button> <button class="button">Take a photo <i
+                        class="fas fa-camera"></i></button>
+                <hr>
+                <h2><span class="text-emph" style="font-size: 33px;-webkit-text-stroke: 0px;"> Edit</span> Personal
+                    Info:</h2>
+                <br><br><br>
+                <div class="flex-row">
+                    <div>
+
+                        <p class="form-label">Name: </p>
+                        <p class="form-label">Email: </p>
+                        <p class="form-label">Old Password: </p>
+                        <p class="form-label">New Password: </p>
+                        <p class="form-label">Re-Enter Password: </p>
+                    </div>
+                    <div>
+                        <form action="">
+                            <input type="text" class="form-input" value="<%= user.name%>">
+                            <br>
+                            <input type="email" class="form-input" value="<%= user.email%>">
+                            <br>
+                            <input type="password" class="form-input">
+                            <br>
+                            <input type="password" class="form-input">
+                            <br>
+                            <input type="password" class="form-input">
+                            <br><br>
+                            <input type="submit" class="button-big" value="Save Changes">
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+
+            <%- include('../includes/footer.ejs') %>
+                <%- include('../includes/end.ejs')%>
+    </body>
